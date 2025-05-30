@@ -30,9 +30,9 @@ public class Konzol {
         }
     }
 
-//    public void jarmuvekKonzolon() {
-//        for(Jarmu jarmu :kolcsonzo.getJarmuvek()){
-//            System.out.println(jarmu.toString());
-//        }
-//    }
+    public void jarmuvekKonzolon() {
+        for(Jarmu jarmu :kolcsonzo.getJarmuvek()){
+            System.out.println(jarmu.toString());
+        }
+    }
 }
