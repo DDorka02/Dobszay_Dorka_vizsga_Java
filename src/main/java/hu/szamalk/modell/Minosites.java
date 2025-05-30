@@ -1,2 +1,5 @@
-package hu.szamalk.modell;public enum Minosites {
+package hu.szamalk.modell;
+
+public enum Minosites {
+    KIVALO, ATLAGOS, MEGFELELO
 }
