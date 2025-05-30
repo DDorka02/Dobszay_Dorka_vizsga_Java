@@ -14,8 +14,8 @@ public class GuiForm {
     private JList list1;
     private JPanel plnMain;
     private JComboBox comboBox;
-    private JButton átmásolButton;
-    private JButton átmozgatButton;
+    private JButton btnMasol;
+    private JButton btmmozgat;
     private JButton btnUjAuto;
     private JMenu mnuBeolvas;
     private JMenu mnuKilepes;
@@ -29,6 +29,36 @@ public class GuiForm {
                 Auto ujAuto = new Auto("bbb-111", Minosites.ATLAGOS,"szerda");
                 kolcsonzo.addJarmu(ujAuto);
                 comboBox.addItem(ujAuto.getRendszam()+"(autó)");
+            }
+        });
+
+        btnMasol.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String elem = (String)comboBox.getSelectedItem();
+                int i = comboBox.getSelectedIndex();
+                if(i > 1){
+                    DefaultListModel<String> lm = (DefaultListModel<String>) list1.getModel();
+                    lm.addElement(elem);
+                }
+
+            }
+        });
+
+
+        btmmozgat.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String elem = (String)comboBox.getSelectedItem();
+                int i = comboBox.getSelectedIndex();
+                if(i > 1){
+                    DefaultListModel<String> lm = (DefaultListModel<String>) list1.getModel();
+                    lm.addElement(elem);
+                    comboBox.removeItem(elem);
+                    if(comboBox.getItemCount()> 0){
+                        comboBox.setSelectedIndex(0);
+                    }
+                }
             }
         });
     }

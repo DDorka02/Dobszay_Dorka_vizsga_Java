@@ -8,6 +8,13 @@ public class Jarmu {
     public Jarmu(String rendszam, Minosites minosites) {
         this.minosites = minosites;
         this.rendszam=rendszam;
+        if(rendszam == "-"){
+            try {
+                throw new KotojelesExeption();
+            }catch (KotojelesExeption e){
+                System.out.println();
+            }
+        }
     }
 
     public String getRendszam() {
